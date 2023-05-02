@@ -1,0 +1,33 @@
+<!-- app/views/todos/show.html.erb -->
+<!-- app/views/layouts/application.html.erb -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Todo App</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<nav>
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/">My Todo App</a>
+  </div>
+</nav>
+<br>
+<h1><%= @todo.description %></h1>
+
+<div class="todo-details">
+  <p><strong>Status:</strong> <%= @todo.status %></p>
+  <p><strong>Created:</strong> <%= @todo.created_at.strftime("%B %d, %Y at %I:%M %p") %></p>
+</div>
+
+<%= link_to "Update", edit_todo_path(@todo) %>
+<%#= link_to "Delete", todo_path(@todo), method: :delete, data: { confirm: "Are you sure you want to delete this todo ?" } %>
+
+
+</body>
+</html>
+
