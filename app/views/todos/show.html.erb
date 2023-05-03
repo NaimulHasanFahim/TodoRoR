@@ -1,24 +1,11 @@
-<!-- app/views/todos/show.html.erb -->
-<!-- app/views/layouts/application.html.erb -->
+<div>
+  <h1><%= @todo.description %></h1>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Todo App</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= csrf_meta_tags %>
-</head>
+  <div class="todo-details">
+    <p><strong>Status:</strong> <%= @todo.status %></p>
+    <p><strong>Created:</strong> <%= @todo.created_at.strftime("%B %d, %Y at %I:%M %p") %></p>
+  </div>
 
-<body>
-<h1><%= @todo.description %></h1>
+  <%= link_to "Update", edit_todo_path(@todo) %>
 
-<div class="todo-details">
-  <p><strong>Status:</strong> <%= @todo.status %></p>
-  <p><strong>Created:</strong> <%= @todo.created_at.strftime("%B %d, %Y at %I:%M %p") %></p>
 </div>
-
-<%= link_to "Update", edit_todo_path(@todo) %>
-
-</body>
-</html>
-

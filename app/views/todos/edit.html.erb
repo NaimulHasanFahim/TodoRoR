@@ -1,19 +1,2 @@
-<!-- app/views/todos/show.html.erb -->
-<!-- app/views/layouts/application.html.erb -->
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Todo App</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= csrf_meta_tags %>
-</head>
-
-<body>
-<br>
 <h2>Edit Todo</h2>
 <%= render "form", todo: @todo %>
-</body>
-</html>
-
