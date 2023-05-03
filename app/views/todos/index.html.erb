@@ -10,13 +10,20 @@
 </head>
 
 <body>
-<ul>
-  <% @todos.each do |todo| %>
-<!--    <li>-->
+<div class="container">
+  <div>
+    <ul >
+      <% @todos.each do |todo| %>
+        <!--    <li>-->
         <li>
           <a href="<%= todo_path(todo) %>">
             <%#= link_to todo.title, todo %>
-            <span><%= todo.title %></span>
+            <div>
+              <span  style="font-weight: bold"><%= todo.title %></span>
+            </div>
+            <div>
+              <span>Status : <%= todo.status %></span>
+            </div>
           </a>
           <span class="actions">
             <form action="/todos/<%= todo.id %>" method="delete">
@@ -25,10 +32,13 @@
             </form>
           </span>
         </li>
-<!--    </li>-->
-  <% end %>
-</ul>
-<a href=<%= new_todo_path %>><p style="font-size: medium" >Add Todo</p></a>
-<%= yield %>
+        <!--    </li>-->
+      <% end %>
+    </ul>
+    <a href=<%= new_todo_path %>><div class="addButton" ><span>Add Todo</span></div></a>
+  </div>
+</div>
+
+
 </body>
 </html>
