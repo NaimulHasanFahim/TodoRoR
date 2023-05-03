@@ -6,7 +6,6 @@
 <head>
   <title>My Todo App</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= csrf_meta_tags %>
 </head>
 
@@ -25,8 +24,6 @@
 </div>
 
 <%= link_to "Update", edit_todo_path(@todo) %>
-<%#= link_to "Delete", todo_path(@todo), method: :delete, data: { confirm: "Are you sure you want to delete this todo ?" } %>
-
 
 </body>
 </html>
